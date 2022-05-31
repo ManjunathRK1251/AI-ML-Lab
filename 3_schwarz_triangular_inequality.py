@@ -39,9 +39,9 @@ print("Hence it satisfies Triangular inequality")
 
 # scale is used to pass the vary the length of the arrows
 # units is used to specify how the arrows are measured
-plt.quiver(*origin,*a,scale=1,units="xy",label=f"A:{mag_A}",color="r")
-plt.quiver(*origin,*b,scale=1,units="xy",label=f"B:{mag_B}",color="g")
-plt.quiver(*origin,*c,scale=1,units="xy",label=f"A+B:{mag_AB}",color="b")
+plt.quiver(*origin,*a,scale=1,units="xy",label=f"A:{mag_A}",color="r",angles='xy')
+plt.quiver(*a,*b,scale=1,units="xy",label=f"B:{mag_B}",color="g",angles='xy')
+plt.quiver(*origin,*c,scale=1,units="xy",label=f"A+B:{mag_AB}",color="b",angles='xy')
 plt.grid() #adds the grid in the graph
 plt.legend() # adds the labelling of each arrow at the top corner of the graph
 plt.show() #used to show the graph in a window
