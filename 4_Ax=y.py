@@ -1,60 +1,38 @@
-import matplotlib.pyplot as plt
+#AX = Y
 import numpy as np
+import matplotlib.pyplot as plt
 
-X=[0]
-Y=[0]
-
-a=np.array([1,0])
-b=np.array([[5,0],[0,5]])
-
-'''
-y - a
-A - b
-x - c
-xecs - d
-'''
-
-# Calculate the inverse of vector b
-b=np.linalg.inv(b)
-print(f"INV of b : {b}")
-print()
-
-#Calculate the dot product of a and b
-c = b @ a
-print (f"a^(-1).y : {a}")
-print()
-
-# Merge vectors a and c
-print(f"c : {c}")
-print(f"a : {a}")
-print()
-
-d = np.array([c,a])
-print(f"d: {d}")
-
-#set the origin
 origin = [0], [0]
+m_list = [[4, 3], [-5, 9]]
+A = np.array(m_list)
+B = np.array([20, 26])
 
-# plt.axis('equal')
+#AX = B
+#X = A^-1 * B
+X = np.linalg.inv(A).dot(B)
 
-# ticklabel_format - Change the ScalarFormatter used by default for linear axes or it customizes the graph
-# ScalarFormatter - Format tick values as a number
-#tick values - Ticks are the values used to show specific points on the coordinate axis
-# style='sci' - turns on scientific notation
-# axis = 'both' - Which axis to apply the parameters to.
-# scilimits = (m,n) - scientific notation will be used for numbers outside the range 10^m to 10^n
-# Use (0,0) to include all numbers.
-plt.ticklabel_format(style='sci', axis='both', scilimits=(0,0))
+print("X=",X)
 
-# quiver([X, Y], U, V, [C], **kw)
-# X, Y define the arrow locations, U, V define the arrow directions, and C optionally sets the color.
-# units = 'xy' , units is used to specify how the arrows are measured
-# scale - Number of data units per arrow length unit; a smaller scale parameter makes the arrow longer. Default is None.
-plt.quiver(X,Y,c[0],c[1], color='orange',units='xy',scale=0.2)
-plt.quiver(X, Y, a[0],a[1], units='xy', scale=0.3)
+#setting figure size
+plt.rcParams["figure.figsize"] = (20,20)
 
-# setting x and y axes limits
-plt.xlim(-2, 5)
-plt.ylim(-2, 2.5)
+#plotting m_list or A
+plt.quiver(*origin, *m_list[0],scale=1,color='r',units='xy',label='A')
+plt.quiver(*origin, *m_list[1],scale=1,color='g',units='xy',label='B')
+
+#plotting B
+plt.quiver(*origin, *B,scale=1,color='b',units='xy',label='Coeff')
+
+#plotting X
+plt.quiver(*origin, *X,scale=1,color='orange',units='xy',label='X')
+
+# setting X and Y axes limits
+plt.xlim(-10, 30)
+plt.ylim(-10, 30)
+
+#customizing the Ax=Y text
+plt.text(21, 28, 'Ax=Y', fontsize = 22, bbox = dict(facecolor = 'red', alpha = 0.5))
+
 plt.grid()
+plt.legend()
 plt.show()
