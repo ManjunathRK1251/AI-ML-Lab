@@ -44,6 +44,7 @@ def addedge(x, y, cost):
 	graph[y].append((x, cost))
 
 #Creating the graph
+'''
 addedge(0, 1, 3)
 addedge(0, 2, 6)
 addedge(0, 3, 5)
@@ -57,6 +58,16 @@ addedge(8, 10, 6)
 addedge(9, 11, 1)
 addedge(9, 12, 10)
 addedge(9, 13, 2)
+'''
+addedge(0,1,4)
+addedge(0,2,1)
+addedge(1,3,1)
+addedge(1,4,2)
+addedge(2,5,2)
+addedge(2,6,3)
+addedge(5,7,4)
+addedge(5,8,3)
+addedge(6,9,1)
 
 # print(graph)
 source = 0
