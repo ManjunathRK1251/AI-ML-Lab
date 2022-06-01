@@ -42,3 +42,8 @@ plt.show()
 sns.distplot(random.chisquare(df=1, size=1000), hist=False)
 plt.title('Chi square Distribution')
 plt.show()
+
+#standard deviation is a measure of the amount of variation or dispersion of a set of values. A low standard deviation indicates that the values tend to be close to the mean of the set,
+#while a high standard deviation indicates that the values are spread out over a wider range
+
+#The variance measures the average degree to which each point differs from the mean
