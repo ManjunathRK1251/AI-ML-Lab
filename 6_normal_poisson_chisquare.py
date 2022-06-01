@@ -25,7 +25,7 @@ plt.show()
 #   Probability density function - probability distribution (the likelihood of an outcome) for a discrete random variable (e.g., a stock or ETF) as opposed to a continuous random variable.
 #       Random variable - A random variable is a numerical description of the outcome of a statistical experiment
 #           Discrete Random Variable - A discrete random variable is one which may take on only a countable number of distinct values such as 0,1,2,3,4,...
-
+#A standard normal random variable is a normally distributed random variable with mean μ=0 and standard deviation σ=1.
 sns.distplot(random.poisson(lam=2, size=1000), kde=False)
 plt.title('Poisson Distribution')
 plt.show()
