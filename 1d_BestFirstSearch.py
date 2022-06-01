@@ -73,3 +73,5 @@ addedge(6,9,1)
 source = 0
 target = 9
 best_first_search(source, target, v)
+
+# o/p: 0 2 5 6 9 
