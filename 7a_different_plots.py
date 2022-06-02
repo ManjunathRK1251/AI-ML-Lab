@@ -45,7 +45,7 @@ plt.show()
 feature_x = np.linspace(-5.0, 3.0, 70)
 feature_y = np.linspace(-5.0, 3.0, 70)
 
-
+#np.meshgrid - Return coordinate matrices from coordinate vectors.
 [X, Y] = np.meshgrid(feature_x, feature_y)
 fig, ax = plt.subplots(1, 1)
 Z = X ** 2 + Y ** 2
