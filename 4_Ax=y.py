@@ -14,7 +14,8 @@ X = np.linalg.inv(A).dot(B)
 print("X=",X)
 
 #setting figure size
-plt.rcParams["figure.figsize"] = (20,20)
+# plt.rcParams["figure.figsize"] = (20,20)
+fig = plt.figure(figsize=(10,10))
 
 #plotting m_list or A
 plt.quiver(*origin, *m_list[0],scale=1,color='r',units='xy',label='A')
