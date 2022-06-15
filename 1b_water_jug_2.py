@@ -5,10 +5,13 @@ visited = defaultdict(lambda: False)
 j1 , j2 , aim = 4, 3, 2
 
 def waterJug(amt1, amt2):
+
+	#Base condition - if the current already satisfies the solution state 
 	if(amt1 == 2 and amt2 == 0) or (amt1 == 0 and amt2 == 2):
 		print(amt1, amt2)
 		return True
 
+	#if the current state is not visited
 	if(visited[(amt1,amt2)] == False):
 		print(amt1, amt2)
 		visited[(amt1, amt2)] = True
